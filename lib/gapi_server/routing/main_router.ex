@@ -13,6 +13,7 @@ defmodule GAPIServer.Routing.MainRouter do
   plug :dispatch
 
   forward "/Server", to: GAPIServer.Routing.ServerRouter
+  forward "/Network", to: GAPIServer.Routing.NetworkWrouter
 
   match _ do
     send_resp(conn, 404, "not found")
